@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/ddd-decisao/ddd-decisao.iml" filepath="$PROJECT_DIR$/ddd-decisao/ddd-decisao.iml" />
       <module fileurl="file://$PROJECT_DIR$/ddd-encapsulamento/ddd-encapsulamento.iml" filepath="$PROJECT_DIR$/ddd-encapsulamento/ddd-encapsulamento.iml" />
       <module fileurl="file://$PROJECT_DIR$/ddd-funcionario/ddd-funcionario.iml" filepath="$PROJECT_DIR$/ddd-funcionario/ddd-funcionario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddd-funcionarios/ddd-funcionarios.iml" filepath="$PROJECT_DIR$/ddd-funcionarios/ddd-funcionarios.iml" />
       <module fileurl="file://$PROJECT_DIR$/ddd-livraria/ddd-livraria.iml" filepath="$PROJECT_DIR$/ddd-livraria/ddd-livraria.iml" />
       <module fileurl="file://$PROJECT_DIR$/ddd-login/ddd-login.iml" filepath="$PROJECT_DIR$/ddd-login/ddd-login.iml" />
     </modules>
