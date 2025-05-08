@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-1TDSPJ.iml" filepath="$PROJECT_DIR$/.idea/Java-1TDSPJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-aula02/ddd-aula02.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-aula02/ddd-aula02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-banco/ddd-banco.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-banco/ddd-banco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-calculoImc/ddd-calculoImc.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-calculoImc/ddd-calculoImc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-conroleDespesas/ddd-conroleDespesas.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-conroleDespesas/ddd-conroleDespesas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-cp1/ddd-cp1.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-cp1/ddd-cp1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-decisao/ddd-decisao.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-decisao/ddd-decisao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-encapsulamento/ddd-encapsulamento.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-encapsulamento/ddd-encapsulamento.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionario/ddd-funcionario.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionario/ddd-funcionario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionarios/ddd-funcionarios.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionarios/ddd-funcionarios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-livraria/ddd-livraria.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-livraria/ddd-livraria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-login/ddd-login.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-login/ddd-login.iml" />
+    </modules>
+  </component>
+</project>
