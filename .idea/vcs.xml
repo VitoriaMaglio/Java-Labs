@@ -3,6 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Challenge-Java" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ClimaSmart-GS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Challenge-Java/Challenge-Java" vcs="Git" />
   </component>
 </project>
