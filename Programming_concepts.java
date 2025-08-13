@@ -28,5 +28,50 @@ int/double/boolean/char/ nomeVar = valor
 char é um caractere Unicode
 String é uma cadeia de caracteres(Classe)
 Entrada de dados ->processamento ->Saída de dados
+
+PROCESSAMENTO DE DADOS
+atribuição =
+casting é a conversão explícita de tipo de dados
+
+int a,b
+double resultado
+resultado = (double) a*b
+PQ SEM ESSE double o resultado seria em int
+
+double x;
+int y;
+a = 5.0;
+b = a ;  -> b = (int) a
+
+13/08/2025
+Tratamento de exceções
+
+Exceção é um evento insperado que ocorre durante a execução do programa e interrompe o fluxo normal como divisão por zero
+entrada inválida do user.
+Tipos de exceções
+ CHECKED EXCEPTIONS são exceções previstas pelo compilador, devem ser tratadas.
+ UNCHECKED EXCEPTIONS são exceções que podem acontecem em tempo de execução e não precisam ser tratadas
+
+TRY..CATCH
+try{linhas de código que podem vir a
+ lançar uma exceção
+}
+catch (tipo_excessao e) {ação que ocorrerá quando a
+ exceção for capturada.
+} finally{sempre é executado, independentemente de ocorrer
+ou não uma exceção }
+
+Exemplos de erros: ArithmeticException,  NumberFormatException
+
+O throw é usado para lançar uma exceção manualmente no seu código.
+throw newTipoDaExcecao("mensagem de erro");
+• É como se você dissesse: "Aqui aconteceu um problema, e eu quero avisar disso", o programa para imediatamente nesse ponto
+
+ throw: lançaaexceçãonaquele exato momento (dentro do método).
+ throws: declara que o método pode lançar exceções, deixando para quem chamar o método
+ decidir se vai tratar.
+
+Exceções próprias -> classe que extends Exception
      */
+
 }

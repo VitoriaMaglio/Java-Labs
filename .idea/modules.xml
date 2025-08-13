@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionarios/ddd-funcionarios.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionarios/ddd-funcionarios.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-livraria/ddd-livraria.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-livraria/ddd-livraria.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-login/ddd-login.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-login/ddd-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios_logica/exercicios_logica.iml" filepath="$PROJECT_DIR$/exercicios_logica/exercicios_logica.iml" />
       <module fileurl="file://$PROJECT_DIR$/poo-Java/poo-java.iml" filepath="$PROJECT_DIR$/poo-Java/poo-java.iml" />
     </modules>
   </component>
