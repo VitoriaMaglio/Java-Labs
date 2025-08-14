@@ -44,5 +44,35 @@ public class Day1 {
         }else{
             System.out.println("O número " + y + " é maior");
         }
+// ler dois valores inteiros, e depois mostrar na tela a soma desses números com uma
+        //mensagem explicativa
+
+        int a,b;
+        int soma;
+        System.out.println("Digite um número inteiro: ");
+        a = sc.nextInt();
+        b = sc.nextInt();
+        System.out.println("Digite um número inteiro: ");
+        soma = a + b ;
+        System.out.println("SOMA = "+soma);
+
+        //ler o valor do raio de um círculo, e depois mostrar o valor da área deste círculo com quatro
+        //casas decimais conforme exemplos
+        double r;
+        double v = 3.14159;
+        double area;
+        System.out.println("Digite um valor de um raio de um círculo :");
+        r = sc.nextDouble();
+        area = v * r * r;
+
+
+
+
+
+
+
     }
+
+
+
 }

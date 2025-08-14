@@ -1,0 +1,1 @@
+Para imprimir um número formatado com certas casas decimais é necessário colocar printf("%.4f%n", num)

@@ -43,6 +43,39 @@ int y;
 a = 5.0;
 b = a ;  -> b = (int) a
 
+ENTRADA DE DADOS é feita com Scanner; lembrar de fechar o scanner com scanner.close();
+String x;
+sout()
+x = scanner.nextLine(); nextInt(); nextDouble(); next().charAt(0) esse zero é o primeiro caractere q vc digitar
+nextLine lê até a quebra de linha(enter)
+
+QUEBRA DE LINHA PENDENTE = ESPAÇO NO BUFFER acontece quando vc quer ler um int e depois um nextLine, uma vez que
+quando vc dá o enter do string esse nextLine consome a quebra de linha , e será absorvida pelo nextLine, ent vc deve fazer dois nextLine para limpar o buffer de leitura(consumir a quebra de linha pendente)
+
+FUNÇÕES MATEMÁTICAS
+Math.sqrt(x) raiz quadrada
+Math.pow(x,y) numero elevado a tal
+Math.abs tira o sinal negativo quando existe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 13/08/2025
 Tratamento de exceções
 
