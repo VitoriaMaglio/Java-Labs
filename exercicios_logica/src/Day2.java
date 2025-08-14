@@ -81,6 +81,48 @@ public class Day2 {
         System.out.printf("VALOR A PAGAR: %.2f%n",valorPagar);
 
 
+        //estruturas condicionais
+        //a ler um número inteiro, e depois dizer se este número é negativo ou não.
+        int num1;
+        System.out.println("Digite:");
+        num1=sc.nextInt();
+        if (num1 > 0) {
+            System.out.println("NÃO NEGATIVO");
+        }else {
+            System.out.println("NEGATIVO");
+        }
+
+        // programa para ler um número inteiro e dizer se este número é par ou ímpar.
+        int num2;
+        System.out.println("Digite:");
+        num2=sc.nextInt();
+        if (num2 % 2 == 0){
+            System.out.println("PAR");
+        }else {
+            System.out.println("IMPAR");
+        }
+
+        //Leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem "Sao Multiplos" ou "Nao sao
+        //Multiplos", indicando se os valores lidos são múltiplos entre si.
+
+        int num3,num4;
+        System.out.println("Digite:");
+        num3=sc.nextInt();
+        System.out.println("Digite:");
+        num4=sc.nextInt();
+        if (num3 % num4 == 0 || num4 % num3 == 0){
+            System.out.println("MULTIPLOS");
+        }else{
+            System.out.println("NAO MULTIPLOS");
+        }
+
+
+
+
+        //Leia um valor com duas casas decimais IGUAL SALARIO, calcule e
+        //mostre o valor que esta pessoa deve pagar de Imposto de Renda
+
+
 
 
     }

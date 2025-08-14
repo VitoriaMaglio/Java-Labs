@@ -20,6 +20,11 @@ public class Programming_concepts {
      módulo são agrupamentos de pacotes relacionados;
      aplicação é um agrupamento de módulos.
      Programa em Java só roda com main declarado.
+
+     Var deve ser declarada; escopo de uma var é a parte do projeto onde a var tem um valor que é válido.
+
+
+
 Estrutura sequencial:
 variáveis são porções de memória RAM que armazenam dados durante a execução de programas.
 declarar var:
@@ -55,18 +60,41 @@ quando vc dá o enter do string esse nextLine consome a quebra de linha , e ser�
 FUNÇÕES MATEMÁTICAS
 Math.sqrt(x) raiz quadrada
 Math.pow(x,y) numero elevado a tal
-Math.abs tira o sinal negativo quando existe
+Math.abs tira o sinal negativo quando existe.
+
+ESTRUTURA CONDICIONAL:
+EXPRESSÕES COMPARATIVAS COMPARAM coisas com outras >< <= >= !=
+EXPRESSÕES LÓGICAS RESULTAM EM TRUE  && (e) , || (OU) ,   !(==) (Não : inverte a condição)
+Condicional são estruturas de controle que direcionam o fluxo do programa
+if(){
+ }else{                 LEMBRAR DE IDENTAR O CÓDIGO
+}
+ Pode encadear ifs e elses dentro do primeiro else
+
+
+swith-case -> várias opções de fluxo a serem tratadas com base no valor de uma var
+lê var, declara outra var e faz switch case
+1= domingo, 2=seg,3=ter...
+
+int num;
+sout("Digite num:")
+num=scanner
+String dia;
+switch(x){
+case 1:
+dia="domingo";
+break;
+case 2:
+dia ="seg";
+break;
+default:
+inválido}
+
+Condicional ternária (condicao) ? valor_se_vdd : valor_se_false  -> substituir if-else
 
 
 
-
-
-
-
-
-
-
-
+a += b -> a = a + b(var recebe ela mesma e outra var)
 
 
 
