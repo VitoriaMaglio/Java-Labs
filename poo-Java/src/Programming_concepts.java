@@ -25,9 +25,9 @@ public class Programming_concepts {
 
 
 
-Estrutura sequencial:
-variáveis são porções de memória RAM que armazenam dados durante a execução de programas.
-declarar var:
+ Estrutura sequencial:
+ variáveis são porções de memória RAM que armazenam dados durante a execução de programas.
+ declarar var:
 <tipo> <nome> = <valor>;
 int/double/boolean/char/ nomeVar = valor
 char é um caractere Unicode
@@ -92,9 +92,19 @@ inválido}
 
 Condicional ternária (condicao) ? valor_se_vdd : valor_se_false  -> substituir if-else
 
-
-
 a += b -> a = a + b(var recebe ela mesma e outra var)
+Para não rodar o programa inteiro vc pode colocar um break point.
+
+    ESTRUTURA REPETITIVA WHILE enquanto uma condição for verdadeira ela executa(usar quando não sabe a quant de repetições q será realizada)
+    while(condição){
+    }     v-> executa e volta f-> não executa
+
+
+    ESTRUTURA REPETITIVA FOR quando se sabe a quant de repetições ou intervalo de valores
+    for(inicio,condição,incremento){}inicio executa somente na primira vez e o incremento executa toda vez depois de voltar
+    boa para fazer repetição baseada em contagem
+
+    do{}while(); primeiro executa o comando depois faz a condição
 
 
 
