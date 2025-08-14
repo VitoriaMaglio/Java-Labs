@@ -1,0 +1,6 @@
+14/08
+Manipulação de arquivos
+Temos uma classe File, que é usada para ler,abrir arquivos com métodos como mkDir(), canRead(),exists(),isFile()
+Outras classes são: FileWriter e FileReader usadas para ler e escrever
+BufferedReader e BufferedWriter lendo e escrevenfo uma linha por vez,usam buffer para armazenar dados
+FileInputStream e FileOutputStream dados binários em arquivos
