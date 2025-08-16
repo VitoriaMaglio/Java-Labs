@@ -1,0 +1,11 @@
+
+
+Cadastrar uma conta bancária,com número da conta, nome do titular, valor depósito inicial(opcional)
+número da conta não pode ser alterado, já o nome sim
+Saldo deve ser protegido, só aumenta por depósitos e diminui por saques.
+Cada saque tem uma taxa de 5.00
+Conta pode ficar com o saldo negativo.
+
+Fazer cadastro com opção de iniciar com depósito ou não, em seguida, realizar um depósito e depois um saque, sempre mostrando os dados da conta
+
+

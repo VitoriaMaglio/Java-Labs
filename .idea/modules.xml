@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-1TDSPJ.iml" filepath="$PROJECT_DIR$/.idea/Java-1TDSPJ.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ddd-agenda-arquivo/ddd-agenda-arquivo.iml" filepath="$PROJECT_DIR$/ddd-agenda-arquivo/ddd-agenda-arquivo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dddfiap/ddd-agenda-arquivo/ddd-agenda-arquivo.iml" filepath="$PROJECT_DIR$/dddfiap/ddd-agenda-arquivo/ddd-agenda-arquivo.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-aula02/ddd-aula02.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-aula02/ddd-aula02.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-banco/ddd-banco.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-banco/ddd-banco.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-calculoImc/ddd-calculoImc.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-calculoImc/ddd-calculoImc.iml" />

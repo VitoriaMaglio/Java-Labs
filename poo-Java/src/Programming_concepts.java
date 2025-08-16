@@ -1,5 +1,6 @@
 public class Programming_concepts {
-    /*Algoritmo é uma sequência finita de instruções para resolver um problema
+    /*
+    Algoritmo é uma sequência finita de instruções para resolver um problema
     Automação é o processo de utilizar máquinas para executar o procedimento desejado de forma automática
      Computador é uma máquina que automatiza a execução de algoritmos.
      Linguagem de programação são regras léxicas e sintáticas para se escrever o programa
@@ -101,10 +102,94 @@ Para não rodar o programa inteiro vc pode colocar um break point.
 
 
     ESTRUTURA REPETITIVA FOR quando se sabe a quant de repetições ou intervalo de valores
-    for(inicio,condição,incremento){}inicio executa somente na primira vez e o incremento executa toda vez depois de voltar
+    for(inicio,condição,incremento){}inicio executa somente na primeira vez e o incremento executa toda vez depois de voltar
     boa para fazer repetição baseada em contagem
 
     do{}while(); primeiro executa o comando depois faz a condição
+
+Operadores bitwise : realizam operações bit a bit,verificar rede de bits, começa da direita para esquerda
+Funções Strings:                          ("demo" significa criar uma demonstração do seu sistema, código ou produto para mostrar como ele funciona.))
+toLowerCase, toUpperCase, trim(elimina espaços em branco no final da string)
+substring(arg1, arg2) corta a string de acordo com as posições q vc colocar
+replace('','') trocar
+indexOf("") primeira ocorrência de uma string
+lastIndxOf("") última
+split() recorta e gera um vetor que guarda os strings  declarar vetor String[] vect  = s.split(" ");
+                                                                   sout(vect[0]); vai imprimir o primeiro elemento do seu string
+FUNÇÕES(sintaxe) procedimentos que tem significado. vantagens-> modularização,delegação de responsabilidades e reaproveitamento ; em POO são chamados de métodos
+
+exemplo:Fazer um programa que le três num e imprime o maior. Ao invés de fazer um if(a>b && a>c) você cria um método com parâmetros e implemeta a lógica
+
+Início de POO ;)
+
+Classe é um tipo estruturado que pode conter atributos e métodos; ela é a representação de um objeto
+instanciar objeto(alocação dinâmica de memória) duas área de memória Stack(est´tico) e Heap(dinâmicos)
+x.(atributos,métodos desse objeto)
+
+Toda classe em Java é uma subclasse da classe Object que possui métodos:
+getClass: retorna tipo do obj
+equals: compara obj
+hashCode: retorna codigo hash do obj
+toString: converte o obj para string
+
+Membros estáticos: atributos e métodos fazem sentido independentemente de objetos, chamados a partir do nome da classe.
+uma classe só com membros estáticos não pode ser instanciada
+Constante estática declarada com letra MAIÚScula: public static final double PI =3.14159;
+
+CONSTRUTORES é executada no momemnto que vc instancia objeto.
+Quando vc instancia um obj, seus atributos recebm um valor padrão null e 0, porém não faz sentido .Assim, para tornar obrigatório a entrada de dados usar construtuor
+
+public nomeClasse(String atributo,int atributoo){
+this.atributo = atributo;//aqui vc está atribuindo o q u user digita para os atributos do objeto
+}
+Só instanciar o obj depois de receber os dados com sout e scanner/ e instanciar o obj com parâmetros
+
+palavra THIS-> é uma referência para o próprio objeto
+diferenciar atributos de variáveis locais; passar o próprio obj como argumento na chamada de um método ou construtor
+
+Sobrecarga mais de uma operação com mesmo nome, só q com parâmetros diferentes.
+
+Encapsulamento esconder detalhes da implementação de uma classe, expondo apenas operações seguras
+Atributos devem sempre ter modificadores de acesso private e devem ser acessados por métodos get e set.
+MODIFICADORES DE acesso:
+private: só a própria classe tem acesso
+default:padrão, só pode ser acessado nas classes do mesmo pacote
+protected:acessado no mesmo pacote e subclasses
+public:todas as classes
+
+                      Quando você tem atributos privados e precisa armazenar dados do input neles, vc faz .setName(sc.scanner()) e depois ao printar vc fasz .getName
+
+
+qUANDO COLOCAMOS NEW são atribuídos valores null ou padrão.
+Tipos referência: classe, variáveis são ponteiros.
+Tipos primitivos: variáves são caixas
+Desalocação de memória:
+Garbage collector monitora os objetos alocados dinamicamente (no heap),desalocando aqueles que não estão mais
+ sendo utilizados.
+
+Desalocação por escopo imediatamente assim que seu escopo local sai de execução
+VETORES->
+SÃO ARRANJOS UNIDIMENSIONAIS
+Array : homogênea(do mesmo tipo), alocada em um bloco contíguo de memória, acessado por índices, acesso imediato
+criar vetor:
+
+ int n = scanner(indica a quantidade de numeros q o user vai digitar)
+
+ tipo[] vect = new tipo[tamanho]  //tamanho são as posições ent 3 é (0,1,2)
+ Para armazenar valores no vetor usar for:
+ for(int i = 0; i>n; i++){           //percorre o vetor i>n ou vect.length que é a quantidade de elementos de um vetor
+ vect[i]=scanner
+ }
+
+
+ Criar um vetor de Classe
+ nomeClasse[] vet = new nomeClasse[tamanho]
+ for(){
+ //precisa fazer o vector apontar para as características do objeto
+ vect[i] = new nomeClasse(parâmetros);
+
+
+
 
 
 
@@ -143,6 +228,13 @@ throw newTipoDaExcecao("mensagem de erro");
  decidir se vai tratar.
 
 Exceções próprias -> classe que extends Exception
+
+
+15/08
+Manipulação de arquivos json
+
+Método static é para que não precise declarar um objeto
+
      */
 
 }
