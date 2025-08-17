@@ -188,9 +188,46 @@ criar vetor:
  //precisa fazer o vector apontar para as características do objeto
  vect[i] = new nomeClasse(parâmetros);
 
+Boxing é o processo de conversão de um objeto tipo valor para um objeto tipo referência compatível.
+Unboxing é o processo contrário.
+Wrapper classes são classes equivalentes aos tipos primitivos, aceitam o valor nulo.
 
+Laço for each: percorrer todos os elementos de uma coleção
+for(tipo apelido : coleção){
+sout(apelido0
+}
 
+Listas-Arrays
+Homogênea,ordenada
+Interface é um tipo que define apenas o que uma classe deve fazer, mas não como
+List é uma Interface,Contém apenas métodos abstratos (sem corpo) e constantes.
+Tamanho variável, acesso sequencial aos elementos. ArrayList é uma implementação otimizada de lista.
+Declarar lista: List <Tipo> nome = new ArrayList<>();
 
+A Lista não aceita tipos primitivos, apenas wrapper classes
+
+Tamanho da lista:list.size()
+Inserir elementos na lista:list.add(""); em certa posição list.add(posição,"")
+
+list.indexOf() ; quando não encontra o elemento ele retorna -1
+Remover elemento: list.remove; remover elementos com predicado list.removeIf( x -> x.charAt(0) == 'm')
+Isso é uma função lambda                                                      tal que
+Fazer um filtro em uma lista para deixar na lista somennte os elementos que começam com M
+
+Criar uma nova lista, pegar a lista original,converter para stream, filtrar, e voltar para lista.
+List<String> resul = list.stream().filter( x -> x.charAt(0) == 'm').collect(Collectors.toList())
+
+Encontrar o primeiro elmento que começa com um predicado
+Declarar a var = list.stream().filter( x -> x.charAt(0) == 'm').findFirst().orElse(null)
+se esse elemento não existir ele retorna nulo.
+
+percorrer lista
+for(String nome : nomes{
+sout(nome)}
+
+Matriz são arranjos bidimensionais(linha,coluna)
+mat.length é a quant de linhas n que o user digita; para as colunas vc acessa os elementos de uma linha e assim é a quantidade de colunas;
+mat[i].length
 
 
 
