@@ -229,12 +229,153 @@ Matriz são arranjos bidimensionais(linha,coluna)
 mat.length é a quant de linhas n que o user digita; para as colunas vc acessa os elementos de uma linha e assim é a quantidade de colunas;
 mat[i].length
 
+Tratando data-hora em java: para integração com database
+data-[hora] local: ano-mês-dia[hora];armazenada sem fuso horário ANO-MES-DIATHORA.SEG
+Usar quando mometo exato do arquivo não interresa a pessoas de outro fuso.
+
+data-hora global: ano-mês-dia-hora;com fuso ANO-MES-DIATHORAZ-FUSO
+Usar quando o momento interessa a pessoas de outro fuso
+duração:tempo decorrido entre duas data-horas.
+
+Timezone UTC
+GMT: Greenwich Mean Time = fuso horário de Londres
+Letra z : horário de Londres
+São Paulo:GMT-3
+Portugal:GMT+1
+
+Padrão ISO 8601 = como representar data em formato de texto(FORMATO;Armazena no gmt).
+
+Operações->
+Instanciar objeto do tipo Data-Hora
+ Instanciar obj Data-hora do momento agora:
+
+ LocalDate d01 = LocalData.now();
+ LocalDateTime d02 = LocalDateTime.now(); gera com a hora local do seu pc
+ Instant d03 = Instant.now(); indica o gmt de Londres
+
+ ISO 8601 para objeto Data-Hora
+
+ LocalDate d04 = LocalDate.parse("2022-07-20");
+ LocalDateTime d05 = LocalDateTime.parse("2022-07-20T01:30:26");
+ Instant d06 = LocalDateTime.parse("2022-07-20T01:30:26Z");
+ Instant d07 = LocalDateTime.parse("2022-07-20T01:30:26-03:00"); fazendo com horário que vc indica em Londres
+
+ Texto customizado para virar data-hora: converter de string para data-hora
+ DateTimeFormatter fmt1 = DateTimeFormater.ofPattern("dd/MM/yyyy"); Vc cria um padrão para que sja convertido string para data-hora
+ LocalDate d08 = LocalDataparse("20/05/2000",fmt1);
 
 
+ Informações soltas em Data-hora:
+ LocalDate d09 = LocalDate.of(2000,4,14);
+
+ Formatar uma Data-Hora: Tem uma data-hora e transformar para texto
+ DateTimeFormatter fmt1 = DateTimeFormater.ofPattern("dd/MM/yyyy");
+ sout(d04.format(fmt1));  assim vai transformar para uma string pois vc chamou o objeto formatado com o padrão
+ sout(fmt1.format(d04));
+
+ Instant(é uma data-hora global) não tem o método format; logo vc precisa criar um padrão com .withZone(ZoneId.systemDefault()) isso para o gmt do pc do user
+ Isso mostra a data-hora equivalente do pc do user.
+
+ Tbm já tem padrões prontos na documentação;
 
 
+ Converter data-hora global para local(tbm tem q informar o timezone)
+ Instant d06 = LocalDateTime.parse("2022-07-20T01:30:26Z");
+ LocalDate r1 = LocalDateTime.ofInstant(d06,ZoneId.systemDefault()); esse zone indica os fusos
+ Fazer a mesma coisa com o LocalDateTime
+
+ Obter dados de uma data-hora local:
+ LocalDate d04 = LocalDate.parse("2022-07-20");
+ sout(d04.getDayOfMonth());get.MonthValue();getYear();
+ LocalDateTime d05 = LocalDateTime.parse("2022-07-20T01:30:26");
+ sout(d05.getHour()); getMinute();
+
+ Cálculos +/-, saber a duração
+ Data-Hora são objetos imutáveis.
+ LocalDate pastweek = d04.minusDays(7); subtraindo 7 dias
+ LocalDate nextweek = d04.plusDays(); adicionadno 7 dias nesse novo objeto , + 7 dias do obj d04
+
+ Instant pastweek = d06.minus(7, ChoroUnit.DAYS); VC INSTANCIA UMA UNIDADE DIAS.
+
+ Duração entre duas data-horas:
+ Duration t1 = Durantion.between(pastweek , d04);
+ sout(t1.toDays());
+
+Enumerações e composições:
+Enumerações tipo especial que específica um conjunto de constantes relacionadas; ENUM
+Ciclo de vida de um objeto, ou estados de um objeto.
+
+Converte String para ENUM:
+.valueOf("")
+Ent vc tem um enum, e na main vc chama o enum com esse método e dentro do parenterses vc coloca a var da entrada do user que sera convertidapra um dos estados do enum.
+
+DESIGN: tem vários tipodes de classes para representar objetos
+Entities são entidades de negócio, uma classe que normalmente representa um objeto persistido em banco de dados
+em que Cada entidade tem um identificador único (id
+Services são serviços associados entrei si para cumprir uma funcionalidade do sistema.
+
+ASSOCIAÇÕES
+Composição tipo de associação forte que permite que um objeto contenha outro, todo-parte e tem-um/tem-muitos
+Símbolo é um diamante preto, a classe que está perto dele representa o todo e a que está com a seta representa as partes
+Tbm tem uma relação tem-um
+
+    EXEMPLOS:
+    tem-um (1:1) -> Um Carro tem um Motor.
+    class Motor {
+    private String modelo;
+
+    public Motor(String modelo) {
+        this.modelo = modelo;
+    }
+}
+
+    class Carro {
+    private Motor motor; // tem-um Motor
+
+    public Carro(String modeloMotor) {
+        this.motor = new Motor(modeloMotor);
+    }
+}
+Em um exercícios de associação vc declara uma Lista para uma composição tem-muitos
+    tem-muitos (1:N); Um Pedido tem muitos Itens.
+    class Item {
+    private String nome;
+    private double preco;
+
+    public Item(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " - R$" + preco;
+    }
+}
+
+    class Pedido {
+    private List<Item> itens = new ArrayList<>(); // composição tem-muitos
+
+    public void adicionarItem(String nome, double preco) {
+        itens.add(new Item(nome, preco)); // Pedido cria e controla os itens
+    }
+
+    public void mostrarItens() {
+        for (Item i : itens) {
+            System.out.println(i);
+        }
+    }
+}
 
 
+HERANÇA É um tipo de associação que permite que uma classe herde todosdados e comportamentos de outra ;  class A extends B
+Herança permite o reuso de atributos e métodos (dados e comportamento) a CLASSE QUE TEM SETA BRANCA É A MÃE, a classe que tem a saída da seta é a que herda
+super(); Construtor da super classe, executar a lógica do construtor da classe mãe.
+Modificador de acesso protected: subclasse pode acessar, então n hora de delarar os atributos da superclassse não colocar private(só a própria classe tem acesso ) e sim protected
+Herança é uma relação -é-um
+Generalização/especialização
+Extensão
+Associação entre Classes, um objeto com ações iguais e diferentes)
 
 13/08/2025
 Tratamento de exceções
@@ -265,7 +406,10 @@ throw newTipoDaExcecao("mensagem de erro");
  decidir se vai tratar.
 
 Exceções próprias -> classe que extends Exception
-
+ ADICIONAR ALGO EM UMA LISTA
+ DECLARA
+ CRIA UM MÉTODO e passa nomeLista
+ lista.add (nomeLista )
 
 15/08
 Manipulação de arquivos json
