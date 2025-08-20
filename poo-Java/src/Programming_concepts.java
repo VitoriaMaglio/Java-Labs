@@ -371,16 +371,164 @@ Em um exercícios de associação vc declara uma Lista para uma composição tem
 HERANÇA É um tipo de associação que permite que uma classe herde todosdados e comportamentos de outra ;  class A extends B
 Herança permite o reuso de atributos e métodos (dados e comportamento) a CLASSE QUE TEM SETA BRANCA É A MÃE, a classe que tem a saída da seta é a que herda
 super(); Construtor da super classe, executar a lógica do construtor da classe mãe.
+
+
 Modificador de acesso protected: subclasse pode acessar, então n hora de delarar os atributos da superclassse não colocar private(só a própria classe tem acesso ) e sim protected
 Herança é uma relação -é-um
 Generalização/especialização
 Extensão
 Associação entre Classes, um objeto com ações iguais e diferentes)
 
+Upcasting converter da subclasse para superclasse
+Atribuir um objeto da subclasse para um objeto da superclasse
+Por exemplo Superclasse sendo Conta bancária e sub sendo uma conta Estrangeira, isso funciona pois uma conta Estrangeira é uma conta.
+Account acc = new Acconut(); super
+BussinesAccount bacc = new BussinesAccount(); sub
+Acconut acc = bacc;
+
+Downcasting converter da superclasse para a subclasse
+Forçar com casting manual colocando entre parenteses o tipo da subclassse.
+BussinesAccount bacc2 = (BussinesAccount) acc;
+
+Testar : o programa só faz a conversão se for do mesmo tipo ent tem q testar
+if(acc instanceOf(BussinesAccount){
+   faz a conversão
+}
+
+Sobrescrita é a implementação de um método da superclasse na subclasse; com o mesmo nome porém com ações diferentes  @Override
+Super chamando a superclasse na subclasse;não só o construtuor mas tbm pode fazer sobrescrevendo um método com super, é só fazer super.método(); e adicionar alguma regra só de subclasse
+
+Classes final evitada que a classe seja herdade; public final class Account
+Método com final evita que ele seja sobreposto
+-> usar para segurança , usar final em métodos já sobrepostos
+
+Polimorfismo-> recurso que permite que variáveis de um mesmo tipo mais genérico possam apontar para objetos de tipos específicos diferentes, tendo assim comportamentos diferentes conforme cada tipo específico
+
+vars do mesmo tipo com comportamentos diferentes
+duas vars do tipo Account só que com instancias diferentes.
+
+Classes abstratadas não podem ser instanciadas, garantindo herança total uma vez que só as subclasses podem ser instanciadas mas a superclasse nunca..
+NA UML uma classe abstrata é escrita em itálico.
+Pq criar uma super se ela não pode ser instanciada?
+Repouso e polimorfismo-> superclasse genérica nos permite tratar de forma fácil todos os tipos de um objeto.
+repouso pois não é preciso repetir atributos e métodos da super nas subclasses.
+
+Métodos abstratos não possuem implementação, exemplo quando a classe é genérica demais para conter sua implementação.
+Se uma classe tem um método abstrato ela deve ser uma classe abstrata.
+Classe que herda uma classe abstrata com método abstrato, a que herda é opbrigada a sobrescrever esse método.
+
+
+Tratamentos de exeções
+Condições de erros durante excecução do programa.
+ uma exceção é um objeto herdado da classe:
+ • java.lang.Exception-o compilador obriga a tratar ou propagar
+ • java.lang.RuntimeException-o compilador não obriga a tratar ou propagar
+Tipos de exceções
+ CHECKED EXCEPTIONS são exceções previstas pelo compilador, devem ser tratadas.
+ UNCHECKED EXCEPTIONS são exceções que podem acontecem em tempo de execução e não precisam ser tratadas
+
+Pilha de chamadas de métodos
+e.printStackTrace(); rastreamento do stack, mostra as sequencias de chamadas que geram erro
+
+TRY..CATCH
+try representa linhas de código que podem vir a lançar uma exceção
+catch código a ser executado quando tiver erro.
+
+FINALLY contém um código a ser executada independente de er ocorrido ou não uma exceção.
+vem depois do catch, com if dentro tipo se nada der errado faça isso
+
+Exceções personalizadas
+
+MVC Model vision controler
+
+
+Thowrs propaga a exceção ao invés de trata-l
+Thowr  lança a exceção / "corta" o método
+Exception
+
+
+
+Ler arquivos
+Classe File é uma representação abstrata de um arquivo e seu caminho
+    File file = new fILE("C:\\...\\...\\..\\")
+    //LER O ARQUIVO COM SCANNER
+    Scanner sc = null; declarando a variável sc mas ainda não instanciando o objeto. Para poder abrir o scanner dentro do try (já com o arquivo) e fechar no finally
+    //IOException tem que tratar
+    try
+    sc=new Scanner(file)
+    sout(nextLine)
+    catch(IOException e)
+    sout(error)
+    finaly
+        if sc != null
+        sc.close();
+
+FileReader sequência de leitura através de um arquivo
+BufferedReader é instanciado a partir do FileReader(mais rápido)
+ String path = "C:\\...\\\"
+
+ try BufferedReader br = new BufferedReader(new FileReader(path)
+
+ String line = br.readLine()
+ while(line != null)
+ sout(line)
+ line = br.readLine()
+ catch(IOException e)sou(erro)
+
+TRY-WITH-RESOURCES  bloco tryque declara um ou mais recursos, e garante que esses
+recursos serão fechados ao final do bloco
+
+
+FileWriter escrita de strings em arquivo
+Cria/recria o arquivo: new FileWriter(path)
+Acrescenta ao arquivo existente: new FileWriter(path, true)
+BufferedWriter(mais rápido)
+
+ String[] lines= newString[] { "Good morning", "Good afternoon", "Good night"};
+ String path= "C:\\temp\\out.txt";
+    try(BufferedWriterbw= newBufferedWriter(newFileWriter(path))) {
+        for(Stringline: lines) {
+            bw.write(line);escreve a frase no arquivo
+            bw.newLine(); pula para a proxima linha
+        }
+     } catch(IOExceptione) {
+          e.printStackTrace()
+
+ Manipulando pastas com File
+ uma variável do tipo Fil pode ser um arquivo ou uma pasta
+ cria um vetor de File e coloca uma função especificando os caminhos da pasta
+  Scanner sc = new Scanner(System.in);
+ System.out.println("Entera folder path: ");
+ StringstrPath = sc.nextLine();
+ File path = newFile(strPath);
+ File[] folders = path.listFiles(File::isDirectory);
+ System.out.println("FOLDERS:");
+ for(File folder : folders) {
+ System.out.println(folder);
+ }
+ File[] files= path.listFiles(File::isFile);
+ System.out.println("FILES:");
+ for(File file : files) {
+ System.out.println(file);
+ }
+ booleansuccess= newFile(strPath + "\\subdir").mkdir(); // criar um sub pasta chamada subdir a partir da sua pasta que vc digitar
+ System.out.println("Directory created successfully: "+ success);
+ sc.close();
+Informações do caminho do arquivo
+ cria uma objto tipo File e usa as propriedades e funções
+ System.out.println("Enter a folder path: ");
+ String strPath= sc.nextLine(); //lendo o arquivo digitado pelo user
+ File path= newFile(strPath); // arquivo digitado pelo user como um obj do tipo File
+ System.out.println("getPath: "+ path.getPath());// propriedades e funções
+ System.out.println("getParent: "+ path.getParent());
+ System.out.println("getName: "+ path.getName());
+ sc.close()
+
+
 13/08/2025
 Tratamento de exceções
 
-Exceção é um evento insperado que ocorre durante a execução do programa e interrompe o fluxo normal como divisão por zero
+Exceção é um evento inesperado que ocorre durante a execução do programa e interrompe o fluxo normal como divisão por zero
 entrada inválida do user.
 Tipos de exceções
  CHECKED EXCEPTIONS são exceções previstas pelo compilador, devem ser tratadas.
