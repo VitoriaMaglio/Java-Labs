@@ -475,7 +475,8 @@ BufferedReader é instanciado a partir do FileReader(mais rápido)
  line = br.readLine()
  catch(IOException e)sou(erro)
 
-TRY-WITH-RESOURCES  bloco tryque declara um ou mais recursos, e garante que esses
+TRY-WITH-RESOURCES  bloco tryque declara um ou mais
+recursos, e garante que esses
 recursos serão fechados ao final do bloco
 
 
