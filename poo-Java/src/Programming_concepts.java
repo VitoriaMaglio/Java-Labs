@@ -495,6 +495,7 @@ BufferedWriter(mais rápido)
      } catch(IOExceptione) {
           e.printStackTrace()
 
+//APPEND PARA ESCREVRERE
  Manipulando pastas com File
  uma variável do tipo Fil pode ser um arquivo ou uma pasta
  cria um vetor de File e coloca uma função especificando os caminhos da pasta
@@ -525,7 +526,7 @@ Informações do caminho do arquivo
  System.out.println("getName: "+ path.getName());
  sc.close()
 
-
+DEPURAÇÃO DE CÓDIGO DEBUG
 13/08/2025
 Tratamento de exceções
 
