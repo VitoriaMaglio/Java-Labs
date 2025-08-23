@@ -1,0 +1,14 @@
+
+
+
+
+
+JDBC: Java Database Connectivity -> API com recursos que conectam Java com bancos de dados baseados em SQL.
+Desvantagens: muito verboso, alto acoplamento com bd e atualmente usamos frameworks.
+
+Controller/Srvice-> lógica de negócios
+
+Driver->JDBC->Oracle(baixar database versão:17)
+project struture-module-dependencies-add-ok
+
+Connecticion fabric - Fábrica de conexão com um método para conectar com o banco de dados.Toda vez que vc precisar realizar aguma coisa no bd, vc chama esse método.
