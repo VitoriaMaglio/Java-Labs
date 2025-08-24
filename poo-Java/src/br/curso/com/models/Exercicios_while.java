@@ -1,3 +1,5 @@
+package br.curso.com.models;
+
 import java.util.Scanner;
 
 public class Exercicios_while {
@@ -5,9 +7,7 @@ public class Exercicios_while {
     //programa que repita a leitura de uma senha até que ela seja válida. Para cada leitura de senha
     //incorreta informada, escrever a mensagem "Senha Invalida". Quando a senha for informada corretamente deve ser
     //impressa a mensagem "Acesso Permitido" e o algoritmo encerrado. Considere que a senha correta é o valor 2002.
-
     public static void main(String[] args) {
-
         int  x;
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite sua senha : ");
@@ -17,11 +17,6 @@ public class Exercicios_while {
             x = sc.nextInt();
         }
         System.out.println("Acesso permitido");
-
-
-        // programa para ler as coordenadas (X,Y) de uma quantidade indeterminada de pontos no sistema
-        //cartesiano. Para cada ponto escrever o quadrante a que ele pertence. O algoritmo será encerrado quando pelo
-        //menos uma de duas coordenadas for NULA (nesta situação sem escrever mensagem alguma).
 
         int z,y;
         System.out.println("Digite uma coordenada: ");
@@ -41,6 +36,10 @@ public class Exercicios_while {
             z= sc.nextInt();
             y = sc.nextInt();
         }
+        // programa para ler as coordenadas (X,Y) de uma quantidade indeterminada de pontos no sistema
+        //cartesiano. Para cada ponto escrever o quadrante a que ele pertence. O algoritmo será encerrado quando pelo
+        //menos uma de duas coordenadas for NULA (nesta situação sem escrever mensagem alguma).
+
 
 
 //Um Posto de combustíveis deseja determinar qual de seus produtos tem a preferência de seus clientes. Escreva

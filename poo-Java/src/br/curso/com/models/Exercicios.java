@@ -1,3 +1,5 @@
+package br.curso.com.models;
+
 import java.util.Locale;
 
 public class Exercicios {

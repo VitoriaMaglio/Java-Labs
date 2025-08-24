@@ -561,6 +561,11 @@ Exceções próprias -> classe que extends Exception
  CRIA UM MÉTODO e passa nomeLista
  lista.add (nomeLista )
 
+//Adicionar objetos em uma lista
+for
+sout + scanner
+cria um obj
+lista.add(bj)
 15/08
 Manipulação de arquivos json
 

@@ -1,3 +1,7 @@
+package br.curso.com.tests;
+
+import br.curso.com.models.Product;
+
 import java.util.Locale;
 import java.util.Scanner;
 

@@ -1,5 +1,6 @@
 package br.curso.com.models;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Vect {
@@ -23,7 +24,6 @@ public class Vect {
         }
 
         //Programa que le nome,idade e altura de N pessoas.Printar a altura média das pessoas e mostrar a porcentagem de pessoas com menos de 16 anods, bem como os nomes dessas pessaos.
-
         //criar um vetor para cada informação, pois não tem como guardar todas as informações em um só pois são de tipos diferentes.
         //sempre que usar vetor dentro do for é preciso indicar a posição [i] da var inicializadora
         System.out.println("Digite a quantidade de pessoas a serem cadastradas: ");
@@ -44,7 +44,7 @@ public class Vect {
         }
         double sum = 0;
         for (int i = 0; i < N; i++) {
-            sum = sum + alturas[i];
+            sum += alturas[i];
         }
         double media = sum / N;
         System.out.println(media);
@@ -62,5 +62,32 @@ public class Vect {
             }
         }
 
+        //Faça um programa que leia N números inteiros e armazene-os em um vetor. Em seguida, mostre na
+        //tela todos os números pares, e também a quantidade de números pares.
+
+        System.out.println("Enter the quantity of numbers you want to digit: ");
+        int q = sc.nextInt();
+
+        int[] vetc = new int[q];
+
+        for (int i = 0; i<q ; i++){
+            System.out.println("Enter the number:");
+            vetc[i]=sc.nextInt();
+        }
+        int som=0;
+        for (int i = 0; i <q;i++){
+            if (vetc[i] % 2 == 0){
+                System.out.println(vetc[i]);
+                som++;
+            }else{
+                System.out.println(vect[i] + "Número ímpar");
+            }
+            System.out.println("Quantidade de pares"+som);
+        }
+
+
+
+        }
+
     }
- }
+

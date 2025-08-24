@@ -1,3 +1,5 @@
+package br.curso.com.models;
+
 public class Product {
 
     //Atributtes
