@@ -1,0 +1,67 @@
+Java é uma das maiores linguagens com empregabilidade.
+Flexibilidade; remuneração
+Sistemas web-> back-end +  banco de dados - requisições web- front-end
+API Interface de programação: é o que está exposto para o front
+API REST é um padrão que estabelece regras como Cliente/servidor com HTTP, comunicação stateless(*); Intergace uniforme e sistemas em camadas.
+Usando protocolo HTTP para realizar ações com verbo http: get(pegar), post(inserir), put(salvar) , delete
+Padrão camadas:
+Cada camada tem um responsabilidade.
+Controladores REST
+  Data transfers Objects
+Camada de serviço
+  Entities/ORM
+Camada de acesso a dados
+
+Docker -> É uma plataforma de conteinerização.
+Um container é como uma “caixinha” que empacota sua aplicação com tudo que ela precisa (código, dependências, bibliotecas, configurações, etc.).
+Assim, a aplicação roda de forma igual em qualquer lugar: no seu PC, em um servidor ou na nuvem.
+
+Postman -> Postman
+É uma ferramenta para testar APIs (REST, GraphQL, SOAP, etc.).
+Com ela, você pode enviar requisições HTTP (GET, POST, PUT, DELETE...) e ver a resposta da API.
+É muito usado por devs backend para testar endpoints sem precisar criar uma interface ainda.
+Também ajuda a documentar e compartilhar coleções de requisições da API com o time.
+lib Maven
+
+
+Curso Nelio-> Interfaces
+Interface é um tipo que define um conjunto de operações que uma class deve implementar.
+Um contrato que a classe deve ser, baixo acoplamento.
+
+Relacionamento definem como as classes ou entidades se ligam entre si.
+TIPOS:
+Associação: uma classe conhece a outra
+Associação direta enter classes gere um acoplamento forte, com dois pontos de manutenção(ruim)
+-Agregação:todo-parte podem existir separadamente.
+-Composição todo-parte forte é um tipo de relacionamento entre classes onde uma depende da outra para existir.Dependentes.
+Herança: uma classe herda atributos e comportamentos de outra extends, relacionamento é-um
+Dependência: uma classe usa temporariamnete outra, relacionamento amis fraco.
+Tipos de objetos->
+Views,Responsáveis pela interface com o usuário (HTML, JSP, Thymeleaf, API JSON, etc.).
+Controllers,Recebem as requisições do usuário, chamam os services e devolvem a resposta.
+Entities,Representam os objetos do mundo real no sistema
+Services,Contêm a regra de negócio. O Controller pede algo → o Service processa
+Repositories.A camada de acesso a dados. Consultas ao banco de dados ficam aqui.
+
+Interface define o que deve ser feito mas não como. Você implementa ela em outra classe.
+Serviços que dependem entre si existe um auto-acoplamento porém não é uma boa parte pois ficam dependentes, uma vez que se for alterar precisa de dois pontos de alteração.
+Em termos de manutenção é ruim. -> Usando Interface que define um contrato  faz as outras classes dependerem dela.
+Na interface tem um contrato(método) abstrato e a classe filha implementa esse método.Acoplamento fraco com um ponto de mudança.
+
+
+Inversão de controle retirar da própria classe a responsabilidadede instanciar suas dpendencias.
+Injeção de dependência por meio de construtor/classe de instanciação/container framework
+Forma de realizar a inversão de controle, um componenteexterno(main) instancia a dependencia que é então injetada no objeto pai.
+
+Exercicío de fixação
+//Uma empresa deseja automatizar seus contratos. Utiliza um serviço de pagamento online para pagar parcelas.
+//Os serviços de pagamento online cobram juro mensal,e uma taxa por pagamento.
+//Por enquanto,o serviço contratado pela empresa é o do Paypal,que aplica
+//juros simples de 1% a cada parcela,mais uma taxa de pagamento de 2%.
+
+//Programa deve conter os dados de um contrato, ler número de meses para parcelamento do contrato e gerar registros de parcelas.
+//A primeira parcela a ser paga deve ser após um mês da data do contrato ...
+
+
+//DOMAIN LAYER DESIGN (entities)-> representam as entidades do domínio(criar dentro do pacote entities)
+//SERVICE LAYER DESIGN -> representam a lógica de negócio e como o sistema usa as entidades (fazer dentro do pacote services)
