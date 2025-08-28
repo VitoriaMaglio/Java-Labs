@@ -1,0 +1,34 @@
+Integrando banco de dados com java->
+
+Dao= Data Access Object. Nessa pasta ficam as classes que fazem conexão direta com o banco de dados
+Models= classes que representam os objetos no mundo real
+Interfaces= definem contratos, Daos podem usar esse contratos
+Tests= testar os métodos do DAO.
+
+Primeiro é necessário criar um pacote dao com a classe ConnectionFactory responsável por criar a conexão com o banco
+importar o ojdbc.jar no classpath que irá devolver uma connection pronta para o DAO usar
+Essa classe tem um método  DriverManager.getConnection(...) que ir´qa conectar a aplicação com o banco de dados
+
+Depois criar uma classse em models que irá representar o seu objeto real9o q vc quer construir em java)
+É uma classe POJO (Plain Old jAVA Object) → só tem atributos, construtor, getters e setters.
+
+Criar uma classe em dao com o nome do ObjetoDao onde ficam os métodos que acessam o banco de dados
+inserir(Contato c) → INSERT
+buscarPorId(int id) → SELECT
+atualizar(Contato c) → UPDATE
+deletar(int id) → DELETE
+Dentro dele você sempre faz:
+Pega uma conexão do ConnectionFactory.
+Prepara um PreparedStatement com SQL.
+Executa (executeUpdate ou executeQuery).
+Fecha a conexão.
+
+Criar uma interface mock -> banco de dados em memória
+Treinar operações sem precisar de banco real, como uma simulação
+
+Classes de Manipulação de arquivos json e txt ->
+
+Classes de teste->
+TesteConexão = testa se a conexão com Oracle está funcionando. Chama a classe ConnectionFactory com o método da conexão e se igual null é erro, se não funcionou a conexão.
+
+
