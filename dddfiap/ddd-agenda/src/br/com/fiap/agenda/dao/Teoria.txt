@@ -30,5 +30,17 @@ Classes de Manipulação de arquivos json e txt ->
 
 Classes de teste->
 TesteConexão = testa se a conexão com Oracle está funcionando. Chama a classe ConnectionFactory com o método da conexão e se igual null é erro, se não funcionou a conexão.
+CREATE TABLE TBL_CONTATO(
+    ID_CONTATO NUMERIC(4) PRIMARY KEY,
+    NOME_CONTATO VARCHAR2(50) NOT NULL,
+    CELULAR_CONTATO VARCHAR2(11) NOT NULL,
+    EMAIL_CONTATO VARCHAR2(60) NOT NULL,
+    INSTAGRAM VARCHAR2(50),
+    TIPO VARCHAR2(20)
+);
+SELECT * FROM TBL_CONTATO;
+ 
 
+INSERT INTO TBL_CONTATO (ID_CONTATO, nome_contato, celular_contato, email_contato, instagram, tipo) 
+VALUES (1, 'Eliane', '11987654321', 'pf1551@fiap.com.br', '@emarion', 'AMIGO');
 
