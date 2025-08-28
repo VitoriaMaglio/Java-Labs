@@ -14,7 +14,7 @@ public class ConnectionFactory {//estabelecer conexão com o bd e vai devolver e
         }catch (SQLException erro){
             erro.printStackTrace();
         }return connection;
-
+// a classe DriverManager é a oracle dbc para acessar bd
 
     }
 }
