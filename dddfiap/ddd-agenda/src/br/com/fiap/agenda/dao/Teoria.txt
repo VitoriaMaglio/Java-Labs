@@ -7,12 +7,17 @@ Tests= testar os métodos do DAO.
 
 Primeiro é necessário criar um pacote dao com a classe ConnectionFactory responsável por criar a conexão com o banco
 importar o ojdbc.jar no classpath que irá devolver uma connection pronta para o DAO usar
-Essa classe tem um método  DriverManager.getConnection(...) que ir´qa conectar a aplicação com o banco de dados
+Essa classe tem um método estático Connection com um objeto que retorna DriverManager.getConnection(...) que ir´qa conectar a aplicação com o banco de dados
 
 Depois criar uma classse em models que irá representar o seu objeto real9o q vc quer construir em java)
 É uma classe POJO (Plain Old jAVA Object) → só tem atributos, construtor, getters e setters.
 
 Criar uma classe em dao com o nome do ObjetoDao onde ficam os métodos que acessam o banco de dados
+Criar um objeto private Connection conexao;
+e um método de acordo com seu diagrama
+dentro do método declarar conexao = ConnectionFactory.obterconexao -> método de conexao da classe ConnectionFactory
+e declarar um PreparedStantemet comandoSQL = null;
+fazer um try-catch com seus métodos de banco->
 inserir(Contato c) → INSERT
 buscarPorId(int id) → SELECT
 atualizar(Contato c) → UPDATE

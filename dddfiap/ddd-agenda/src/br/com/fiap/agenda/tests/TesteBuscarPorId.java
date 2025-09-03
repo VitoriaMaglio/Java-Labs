@@ -15,6 +15,7 @@ public class TesteBuscarPorId {
         System.out.println("Digite o id do contato desejado: ");
         int id = leitor.nextInt();
 
+
         contato = dao.buscarPorId(id);
         System.out.println(contato);
     }
