@@ -1,4 +1,4 @@
-package br.curso.com.models;
+package br.curso.com.models.entities;
 
 public class IntPooContJuridica extends IntPooContribuintes {
 

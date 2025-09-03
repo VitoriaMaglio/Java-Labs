@@ -556,6 +556,7 @@ throw newTipoDaExcecao("mensagem de erro");
  decidir se vai tratar.
 
 Exceções próprias -> classe que extends Exception
+Quando vamos usar exceções personalizadas precisamos criar classes para elas com extends Exception se for checada ou com extends RunTimeException se for não checada
  ADICIONAR ALGO EM UMA LISTA
  DECLARA
  CRIA UM MÉTODO e passa nomeLista

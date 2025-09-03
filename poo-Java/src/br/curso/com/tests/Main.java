@@ -1,6 +1,6 @@
 package br.curso.com.tests;
 
-import br.curso.com.models.Account;
+import br.curso.com.models.entities.Account;
 
 import java.util.Locale;
 import java.util.Scanner;

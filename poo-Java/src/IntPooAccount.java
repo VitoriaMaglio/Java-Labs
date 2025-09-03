@@ -1,6 +1,3 @@
-import br.curso.com.models.Account;
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 public class IntPooAccount {

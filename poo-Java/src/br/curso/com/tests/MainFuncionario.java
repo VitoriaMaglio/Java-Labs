@@ -1,7 +1,7 @@
 package br.curso.com.tests;
 
-import br.curso.com.models.IntPooFuncionario;
-import br.curso.com.models.OutsourcedFuncionario;
+import br.curso.com.models.entities.IntPooFuncionario;
+import br.curso.com.models.entities.OutsourcedFuncionario;
 
 import java.util.ArrayList;
 import java.util.List;

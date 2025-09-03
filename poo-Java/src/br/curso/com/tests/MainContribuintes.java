@@ -1,8 +1,8 @@
 package br.curso.com.tests;
 
-import br.curso.com.models.IntPooContFisica;
-import br.curso.com.models.IntPooContJuridica;
-import br.curso.com.models.IntPooContribuintes;
+import br.curso.com.models.entities.IntPooContFisica;
+import br.curso.com.models.entities.IntPooContJuridica;
+import br.curso.com.models.entities.IntPooContribuintes;
 
 import java.util.ArrayList;
 import java.util.List;

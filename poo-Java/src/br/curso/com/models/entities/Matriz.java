@@ -1,4 +1,4 @@
-package br.curso.com.models;
+package br.curso.com.models.entities;
 
 import java.util.Scanner;
 

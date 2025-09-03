@@ -65,3 +65,12 @@ Exercicío de fixação
 
 //DOMAIN LAYER DESIGN (entities)-> representam as entidades do domínio(criar dentro do pacote entities)
 //SERVICE LAYER DESIGN -> representam a lógica de negócio e como o sistema usa as entidades (fazer dentro do pacote services)
+
+No UML quando tem um * do lado de uma classe e uma ligação entre duas classe representa uma relação um para muitos em que a classe com asterisco é muitos.
+Na classe que tem muitos vc representa o muitos com uma lista com o nome da classe muitos.
+
+Regras:
+1 → exatamente um.
+0..1 → zero ou um.
+* → muitos (zero ou mais).
+1..* → pelo menos um (um ou muitos).
