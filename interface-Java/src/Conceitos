@@ -31,7 +31,7 @@ Um contrato que a classe deve ser, baixo acoplamento.
 Relacionamento definem como as classes ou entidades se ligam entre si.
 TIPOS:
 Associação: uma classe conhece a outra
-Associação direta enter classes gere um acoplamento forte, com dois pontos de manutenção(ruim)
+Associação direta entre classes gera um acoplamento forte, com dois pontos de manutenção(ruim)
 -Agregação:todo-parte podem existir separadamente.
 -Composição todo-parte forte é um tipo de relacionamento entre classes onde uma depende da outra para existir.Dependentes.
 Herança: uma classe herda atributos e comportamentos de outra extends, relacionamento é-um
@@ -53,7 +53,7 @@ Inversão de controle retirar da própria classe a responsabilidadede instanciar
 Injeção de dependência por meio de construtor/classe de instanciação/container framework
 Forma de realizar a inversão de controle, um componenteexterno(main) instancia a dependencia que é então injetada no objeto pai.
 
-Exercicío de fixação
+Exercicío de fixação Section 16
 //Uma empresa deseja automatizar seus contratos. Utiliza um serviço de pagamento online para pagar parcelas.
 //Os serviços de pagamento online cobram juro mensal,e uma taxa por pagamento.
 //Por enquanto,o serviço contratado pela empresa é o do Paypal,que aplica
@@ -61,6 +61,68 @@ Exercicío de fixação
 
 //Programa deve conter os dados de um contrato, ler número de meses para parcelamento do contrato e gerar registros de parcelas.
 //A primeira parcela a ser paga deve ser após um mês da data do contrato ...
+
+RESOLVENDO EXERCÍCIO TEORIA:
+UML->
+Classe associada com um asterisco representa uma associação de um para muitos
+Um contrato está associado a muitas parcelas
+
+entities
+Installment
+gerar um atributo estático DateTimeFormatter fmt = DateTimeFormatter.ofPattern(dd/mm...);
+declarar os atributos desse classe, criar construtor sem parâmetros e o com parâmetros, criar getters e setters.
+gerar toString para imprimir os dados na tela depois no main(arrumar date formatada)
+
+Contract
+declarar os atributos desse classe, criar construtor sem parâmetros e o com parâmetros, criar getters e setters.
+Um contrato está associado a muitas parcelas-> para representar essa associação de muitos vc declara uma lista de
+installments
+
+Main
+Scanner
+sout(Entre os dados)
+int number = sc.nextInt();
+DateTimeFormatter fmt= DateTimeFormatter.ofPattern(dd/mm...);
+LocalDate date = LocalDate.parse(sc.next());
+Instancia o contrato com os parâmetros(pq vc já leutodos eles)
+
+sout(Entre números de parcelas)
+int n = sc.nextInt();
+
+
+Service
+OnlinePaymentService - interface
+
+ContractService- classe com método; declarar OnlinePaymentService pois é uma dependência
+gerar construtor com lógica da dependência
+método
+método para gerar parcelas, passando Contract e var int months de parâmetro)
+
+var double basicQuote para gerar uma parcela básica getTotalValue do contract / months
+for(int = 1 ; 1<=months; i++)
+{LocalDate dueDate= contract.getDate().plusMonths(i)
+fazendo lógica para gerar parcela a cada mês
+
+double interest = onlinePaymentService.métodointerest(basicQuote,i)
+double fee= onlinePaymentService.paymentFee(basicQuote + interest)
+
+valor total das parcelas  double quota = basicQuote + interest + fee;
+
+Agora adicio9nar esses dados como um objeto Installment
+
+contract.getInstallments().add(new Installment(dueDate,quota));
+
+PaypalService implements OnlinePaymentService
+método(double amount)  que retorna *0,02 sobre amount
+método (double amount, int months)
+retirn amount * 0.01 * monsths
+
+
+Main
+Instanciar ContractService com argumento new PaypalService
+chamar contractService.método()
+sout(Imprimir parcelas)
+for(Installment installment : obj.getInstallment) -> chamar o getInstallment para ler os dados de cada parcela
 
 
 //DOMAIN LAYER DESIGN (entities)-> representam as entidades do domínio(criar dentro do pacote entities)
@@ -74,3 +136,101 @@ Regras:
 0..1 → zero ou um.
 * → muitos (zero ou mais).
 1..* → pelo menos um (um ou muitos).
+
+07/09/2025
+Diferença entre herdar e cumprir contrato
+Aspectos comuns entre herança e interfaces: relação é-um Circulo é uma Forma e TaxaBrasil é uma Taxa
+Generalização/especialização e polimorfismo onde um var pode ser associada de acordo com seus objetos
+
+Diferença->
+Herança tem o reuso de comportamentos e interface é só um contrato a ser cumprido, vc só implementa
+
+E se vc tem uma interface e tbm quer ter um atributo reutilizável para todas as figuras??
+Tem que repetir os atributos em cada classe? Não, vc cria a interface q define o contrato, cria uma classe abstrata com seu atributo e classes q herdam extends a classe abstrata e q implementam implements o contrato
+Shape interface com método
+public abstract class AbstractForma implements Shape
+Clss Circle extends AbstractForma
+declarar vars do tipo AbstractForma
+
+Herança múltipla não roda em java pois não tem como ter reuso, vc apenas implemeta mais de um contrato
+problema diamante->ambiguidade causada pela existência do mesmo método em mais de uma superclasse
+Classe genérica e classe específicas e outra classe q herda mais de uma superclasse
+
+Exemplo
+Disposito classe abstrata método process
+Impressora extends Disposito e overreide seu método process
+Scanner extends Disposito e overreide seu método process de outra forma , implementações diferentes
+Aqui são duas classes específica onde cada uma tem uma implementação
+ComboDispositivo extends Impressora , Scanner ERRADO NÃO TEM COMO UMA CLASSE HERDAR MAIS DE UMA CLASSE
+
+Para isso deve usar interface->
+
+Disposito classe abstrata método process
+Interface Impressora
+Interface Scanner
+Classe Impressora extends Device implements Scanner
+Classe Scanner extends Device implements Impressora
+ComboDispositivo extends Disposito implements Scanner,Printer -> aqui você pode implementar duas interfaces
+tendo obrigação de implementar tudo q está nas interfaces eliminando ambiguidades.
+
+Interface Comparable
+public interface Comparable<T>{
+int compareTo(T o)
+}
+
+Programa q ler um arq com nomes de pessoas, armazenando os em uma lista. Depois ordenanr os dados dessa listya
+e mostra-los na tela
+
+Main
+declara main
+Declara uma Lista -> List <String> list = new ArrayList<>();
+Declara uma String path = "C:\\";
+
+
+Criar na pasta um arq com o caminho e os nomes
+
+ISSO AQUI É TRY-WITH-RESOURCES
+try(BufferedReader br = new BufferedReader(new FileReader(path))){  declara a classe arquivo
+String name = br.readLine();  lê a linha
+while (name != null){ enquanto a linha não for nula ela adiciona o nome na lista
+list.add(name);
+name = br.readLine();
+}
+Collections.sort(list)  uma forma de ordenar os dados de uma lista
+for(String s : list){
+sout (s)
+}catch(IOException)
+}
+
+
+ler arq .csv contendo funcionários, em q cad alinha do arq cntem um obj e não um dado
+colocar no arq os dados dos funcionarios
+
+Criar uma classe funcionário implements Comparable<Funcionario> com atributos, construtor e getters e setters
+e adicionar método compareTo que vai comparar um objeto com outro
+Quando vc comparra um obj com obj ele retorna int com return comparando nomes.
+Main
+Declarar lista de Funcionario
+try(BufferedReader br = new BufferedReader(new FileReader(path))){
+String funcionarioCsv = br.readLine();
+while (name != null){
+String[] campos = funcionarioCsv.split(",")   aqui ele declarou um vetor que recebe o objeto que lê cada linha e dividiu oos dados com ,
+
+}
+list.add(new Funcionario(campos[0],Double.parseDouble(campos[1]))
+funcionarioCsv = br.readLine();
+}Collections.sort(list)  uma forma de ordenar os dados de uma lista
+ for(Funcionario fun : list){
+ sout (fun)
+ }catch(IOException)
+ }
+
+Classe Collections método sort srve com List<T> list onde só pode ordenar a lista do tipo T se for do tipo comparable
+Assim, vc deve implementar a interface Comparable
+
+
+Default Methods = definir implementação padrão de métodos para evitar repetição e evitar criar classes abstartaas para ter reuso de implementação.
+Interfaces podem conter métodos concretos
+Cria uma interface e tem clases que implementam essa interface
+potêncica Math.pow
+Interface não pode ter contrutor
