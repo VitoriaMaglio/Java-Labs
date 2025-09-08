@@ -177,7 +177,11 @@ Interface Comparable
 public interface Comparable<T>{
 int compareTo(T o)
 }
-
+Comparable é uma interface genérica do Java (java.lang.Comparable<T>) usada para definir a ordem natural de objetos.
+Ela serve para que seus objetos possam ser comparados entre si de forma consistente, permitindo:
+Ordenar listas (Collections.sort() / list.sort()).
+Inserir em estruturas ordenadas (TreeSet, TreeMap).
+Comparar manualmente (obj1.compareTo(obj2)).
 Programa q ler um arq com nomes de pessoas, armazenando os em uma lista. Depois ordenanr os dados dessa listya
 e mostra-los na tela
 
@@ -240,7 +244,7 @@ Generics permitem que classes,interfaces e métodos possam ser parametizados por
  List<String> list = new ArrayList<>();
  list.add("Maria");
  String name = list.get(0);
-Aqui vpcê consegue definir e ter a certez de que o elemento retornado vai ser uma String
+Aqui vpcê consegue definir e ter a certeza de que o elemento retornado vai ser uma String
 
 Programa q le n e n números interios. Ao final exibir o primeiro valor. Implementar o PrintService que vai realizar um
 serviço de impressão
@@ -266,35 +270,172 @@ Integer value = sc.next
 ps.addValue(value)
 }
 
-
-
 E se eu quiser add Strings e não inteiros?
 Como reusar esse código? Torna-lo genérico
 Criar uma classe parametizado com tipo T, q vai dar pra rusar e garantir typesafety
 
+O T é um placeholder (um tipo genérico) que será substituído por um tipo real quando você criar a lista.
+Ele serve para o compilador garantir segurança de tipos (type safety).
+
+
+Genéricos delimitados->
+São restrições que você coloca em um parâmetro genérico (T) para limitar quais tipos podem ser usados.
+Com extends → você diz que o tipo genérico deve ser uma subclasse (ou implementar uma interface).
+Com super → você define que o tipo genérico deve ser uma superclasse.
+
+class Caixa<T extends Number> {
+    private T valor;
+
+    public void guardar(T valor) {
+        this.valor = valor;
+    }
+
+    public T abrir() {
+        return valor;
+    }
+}
+
+Nesse caso, T só pode ser um subtipo de Number (Integer, Double, Float, etc.).
+Se você tentar Caixa<String>, vai dar erro, porque String não é um Number.
+
+public <T extends Comparable<T>> T maximo(T a, T b) {
+    return a.compareTo(b) > 0 ? a : b;
+}
+Aqui, o método só aceita tipos que implementam Comparable (como Integer, String, etc.). Assim o compilador sabe que pode chamar compareTo.
+
+Tipos curinga->wildcard types <?>
+generics são invariantes, List<Object> não é um supertipo de qualquer tipo de lista e sim List<?> ; um tipo curinga que pode receber um genérico de qualquer tipo
+
+Porém não dá para adicionar dados a uma lista de qualquer tipo, pq o compilador não sabe o tipo d alista que foi instanciada
+
+Curinga delimitados-> São curingas que possuem restrições de tipo com extends ou super
+Curinga delimitado superior (? extends)    Ler (entrada segura, saída limitada)
+Significa: “algum tipo que herda de ...”
+Garante que você pode ler da lista como o tipo pai, mas não pode adicionar novos elementos (exceto null).
+public void imprimir(List<? extends Number> lista) {
+    for (Number n : lista) {
+        System.out.println(n);
+    }
+}não consegue fazer lista.add(10), porque o compilador não sabe se a lista é de Integer, Double, etc.
+
+Curinga delimitado inferior (? super) Escrever (inserção segura, leitura limitada)
+Significa: “algum tipo que é superclasse de ...”
+Garante que você pode inserir elementos do tipo especificado ou seus filhos, mas só pode ler como Object.
+
+HashCode e Equals
+        Class Object É a superclasse de todas as classes em Java,Se você não declara explicitamente de quem uma classe herda, ela automaticamente herda de Object.
+        public class Paciente {
+            // na prática é como se fosse:
+            // public class Paciente extends Object
+        }
+
+
+        Métodos-> toString =Retorna uma representação em texto do objeto.
+        equals(Object obj)=Compara se dois objetos são “iguais”.
+
+HashCode e equals server para comparar se um obj é igual a outro
+equals retorna true ou false
+hashcode Retorna um número inteiro que representa o objeto, é um código gerado por uma função, dados iguyais tem o mesmo código gerado
+POREM ESSE CÓDIGO PODEM DAR COLIsões pois só tem 32bytes de espaço
+Se o código de dois objetos são iguais provavelmente são iguais(pode ter colisões)
+MUITO RÁPIDO PARA COMPARAR.
+Se tem colisão vc confirma com o método equals
+
+Comparar se clientes são iguais qunado tiverem o mesmo nome email
+generate hashcode e equals selecionar os atributos e vai gerar implementação padrão
+== compara posições na memória, estão se vc comparar dois objetos com mesmo dado vai dar false, porém se vc escrever em "" e não declarar um obj com new vai comparar os dados e não a posição
 
 
 
+Set<T> -> não tem posição e repetição
+conjunto de elementos, uma interface com implementações->
+add(obj), remove(obj), contains(obj)(verifica se obj existe na coleção)
+clear()
+ • size()
+ • removeIf(predicate)
+ • addAll(other) - união: adiciona no conjunto os elementos do outro conjunto, sem repetição
+ • retainAll(other) - interseção: remove do conjunto os elementos não contitos em other
+ • removeAll(other) - diferença: remove do conjunto os elementos contidos em other
+
+HashSet
+Usa tabela hash internamente.
+Não garante ordem dos elementos.
+Muito rápido para adicionar, remover e buscar.
+ Set<String> set = new HashSet<>();
+ set.add("TV");
+ set.add("Notebook");
+ set.add("Tablet");
+ System.out.println(set.contains("Notebook"));
+ for (String p : set) {
+ System.out.println(p)
+
+LinkedHashSet
+Mantém a ordem de inserção.
+Mais lento que HashSet, mas previsível.
+Set<Integer> numeros = new LinkedHashSet<>();
+numeros.add(3);
+numeros.add(1);
+numeros.add(2);
+System.out.println(numeros);
+
+TreeSet
+Mantém os elementos ordenados (ordem natural ou via Comparator).
+Mais lento, mas útil quando você precisa de ordenação automática.
+
+Set<Integer> numeros = new TreeSet<>();
+numeros.add(3);
+numeros.add(1);
+numeros.add(2);
+System.out.println(numeros);
 
 
+Set testa igualdade
+se sua classe básica tiver haschcode equals compara com eles por conteúdo, senão iver vai comparar as referÊncias dos objetods
+
+TreeSet compara elementos
+usa o compareTo, para usar tem q implements no nome da classe Comparable<Classe> para que o TreeSet ordene os objetos
+
+EXERCÍCIO
+ Um site de internet registra um log de acessos dos usuários. Um
+ registro de log consiste no nome de usuário (apenas uma palavra) e o
+ instante em que o usuário acessou o site no padrão ISO 8601,
+ separados por espaço, conforme exemplo. Fazer um programa que leia
+ o log de acessos a partir de um arquivo, e daí informe quantos usuários
+ distintos acessaram o site.
+
+LER ARQ DE ENTRADA COM DADOS DE PESSOAS Q ACESSAM HORÁRIO E DIZ NO FIM QUNATOS USUARIOS DISTINTOS ACESSARAM O SITE
+criar classe para representar entrada dos usuarios com atributos username e Date moment
+para saber quantos usuarios diferentes acessaram devemos comparar os nomes
+Assim criar um haschcode equals
+Na main vc faz bufferedReader e FileReader
+try
+Criar um Set<Classe> new HashSet pq a ordem não importa
+recortar string com vetor e função split
+String [] fields=line.split("")
+String username = fields[0]
+Formatar data
+Date monet = Date.from(Instant.prse(fields[1]))
+set.add(new Class())
 
 
+Exercício de Set= Fazer
 
+Map ->
+Estrutura de dados genérica com pares chave/valor
+É como um dicionário: cada chave (K) é única e aponta para um valor (V).
+Métodos=
+• put(key, value), remove(key), containsKey(key), get(key)
+put inserir                     verificar se existe chave  recupera elemento pela chave
+ Uso comum: cookies, local storage, qualquer modelo chave-valor
 
+ keySet() retorna um set do map percorrendo chaves e valores
 
+ Quando você precisa associar um identificador único a um valor
 
+ Comparação das coleções
+ Estrutura	O que é?	                                                Permite duplicados?	                   Ordenação	                                                                                       Exemplo prático
+ List<T>	Lista ordenada de elementos indexados (cada item tem posição).	✅ Sim	                              Mantém a ordem de inserção (ex: ArrayList), ou pode ser ligada (ex: LinkedList).	                     Lista de alunos de uma sala ([Ana, João, Ana]).
+ Set<T>	Conjunto de elementos únicos (não aceita duplicados).	             ❌ Não	                           Pode não ter ordem (HashSet), manter ordem de inserção (LinkedHashSet) ou ordenar naturalmente (TreeSet).	Conjunto de CPFs ({111, 222, 333}).
+ Map<K, V>	Estrutura de pares chave → valor. Cada chave é única.	 ❌ Chaves não podem repetir (mas valores podem).	HashMap não garante ordem, LinkedHashMap mantém inserção, TreeMap ordena por chave.	            CPF → Pessoa ({111 → Ana, 222 → João}).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ Exercício Map -> fazer
