@@ -234,3 +234,67 @@ Interfaces podem conter métodos concretos
 Cria uma interface e tem clases que implementam essa interface
 potêncica Math.pow
 Interface não pode ter contrutor
+
+Section 17 -> Generics, Set, Ma
+Generics permitem que classes,interfaces e métodos possam ser parametizados por tipo. Uso comum em coleções
+ List<String> list = new ArrayList<>();
+ list.add("Maria");
+ String name = list.get(0);
+Aqui vpcê consegue definir e ter a certez de que o elemento retornado vai ser uma String
+
+Programa q le n e n números interios. Ao final exibir o primeiro valor. Implementar o PrintService que vai realizar um
+serviço de impressão
+PrintService<T>
+Lista de inteiros List<T>
+com método addValue(T value)
+método T first()
+return list.get(0)
+método imprimir lista for i < list.size i++
+list.get(i)
+
+Main vc instanciar a classe com nseu tipo
+sout(Quantos valores:)
+le com scaneer
+
+
+PrintService<Integer> ps = new PrintService<>() aqui só entre int
+PrintService<String> ps = new PrintService<>() aqui só entre string
+
+
+for i=0;i<n;i++{
+Integer value = sc.next
+ps.addValue(value)
+}
+
+
+
+E se eu quiser add Strings e não inteiros?
+Como reusar esse código? Torna-lo genérico
+Criar uma classe parametizado com tipo T, q vai dar pra rusar e garantir typesafety
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
