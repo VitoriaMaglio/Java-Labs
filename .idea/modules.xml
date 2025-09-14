@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-encapsulamento/ddd-encapsulamento.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-encapsulamento/ddd-encapsulamento.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionario/ddd-funcionario.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionario/ddd-funcionario.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionarios/ddd-funcionarios.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-funcionarios/ddd-funcionarios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ddd-jdbc/ddd-jdbc.iml" filepath="$PROJECT_DIR$/ddd-jdbc/ddd-jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-livraria/ddd-livraria.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-livraria/ddd-livraria.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD_1TDSPJ/ddd-login/ddd-login.iml" filepath="$PROJECT_DIR$/DDD_1TDSPJ/ddd-login/ddd-login.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercicios_logica/exercicios_logica.iml" filepath="$PROJECT_DIR$/exercicios_logica/exercicios_logica.iml" />
