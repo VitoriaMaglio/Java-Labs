@@ -23,6 +23,17 @@ Com ela, você pode enviar requisições HTTP (GET, POST, PUT, DELETE...) e ver 
 Também ajuda a documentar e compartilhar coleções de requisições da API com o time.
 lib Maven
 
+Thread
+O que é: Uma thread é uma linha de execução dentro de um programa. Um programa pode ter várias threads rodando ao mesmo tempo (multithreading).
+Acurácia
+O que é: Mede quão corretos são os resultados de um modelo ou teste. É a proporção de previsões corretas sobre o total.
+Binomial Coefficient (Coeficiente Binomial)
+O que é: É o número de maneiras de escolher k elementos de um conjunto de n elementos, sem se importar com a ordem.
+
+Função estática Uma função estática é um método que pertence à classe, e não a um objeto específico. Isso significa que você pode chamar o método sem precisar criar uma instância da classe.
+Você acessa diretamente pela classe: Classe.metodo().
+Não precisa de new Classe() para usar o método.
+
 
 Curso Nelio-> Interfaces
 Interface é um tipo que define um conjunto de operações que uma class deve implementar.
@@ -439,48 +450,10 @@ put inserir                     verificar se existe chave  recupera elemento pel
  Map<K, V>	Estrutura de pares chave → valor. Cada chave é única.	 ❌ Chaves não podem repetir (mas valores podem).	HashMap não garante ordem, LinkedHashMap mantém inserção, TreeMap ordena por chave.	            CPF → Pessoa ({111 → Ana, 222 → João}).
 
  Exercício Map -> fazer
+    FAZER TODOS OS EXERCÍCIOS DO CURSO
 
 
 
-
- Programação funcional e expressões lambda
-
- Podemos comparar objetos om compareTo implementando Comparable e usando Collections.sort, porém se o critério de comparação mudar vc deve ficar mudnaod a classe produto
-
- Comparator<T> é uma interface funcional com apenas um método compare que recebr dois objetos do tipo T que serão comparados.
- Implements Comparator<Products>
- criar uma calsse separada
- declarar método campare(Produto p1, Produto p2){
- return p1.getname().toUpperCase().compareTo(p2.getname().toUpperCase() comparando produtos sem letras maiu ou minuscuylas
-   dentro do sort chamar o método/classe
- dentro da main
- declarar uma var para implemetnar uma classe anômima e dentro do sort chamar essa var.
-
-uma função anônima geralmente aparece como uma implementação de interface ou classe interna anônima.
-
-É usada quando você precisa passar uma implementação rápida sem criar uma classe separada.
-FUNÇÃO LABDA MINIMIZA O CÓDIGO-> São uma forma mais curta de escrever funções anônimas, especialmente para interfaces funcionais (interfaces com apenas um método abstrato).
-list.sort((p1,p2)-> p1.getname().toUpperCase().compareTo(p2.getname().toUpperCase();
-errow function
-
-Paradigmas de programação
-Paradigma funcional baseado no fromalismo matemático Cálculo Lambda, escrevendo por meio de expressões = programação funcional transparência referencial(função só depende dos seus valores de entrada e não de acesso a valores externos), Objetos imutáveis(programa mais simples e menos matutenção, Tipagem dinâmica / inferência de tipos, função de primeira ordem(podem ser passadods como parametros e retorna funções)
-
-Programação imperativa(antiga) não tem essas qualidades ou é fraco
-
-
-
-O :: é chamado de operador de referência a método (method reference).
-Ele aponta para um método existente sem precisar chamá-lo diretamente.
-Funciona como uma função lambda, mas de forma ainda mais curta e legível.
-
-2 Exemplos
-Lambda:
-List<String> nomes = List.of("Ana", "João", "Maria");
-nomes.forEach(nome -> System.out.println(nome));
-
-Method Reference:
-nomes.forEach(System.out::println);
 
 
 

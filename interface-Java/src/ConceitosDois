@@ -1,0 +1,109 @@
+ Programação funcional e expressões lambda
+
+ Podemos comparar objetos com compareTo implementando Comparable e usando Collections.sort, porém se o critério de comparação mudar vc deve ficar mudnaod a classe produto
+
+ Comparator<T> é uma interface funcional com apenas um método compare que recebr dois objetos do tipo T que serão comparados.
+ Implements Comparator<Products>
+ criar uma calsse separada
+ declarar método campare(Produto p1, Produto p2){
+ return p1.getname().toUpperCase().compareTo(p2.getname().toUpperCase() comparando produtos sem letras maiu ou minuscuylas
+   dentro do sort chamar o método/classe
+ dentro da main
+ declarar uma var para implemetnar uma classe anômima e dentro do sort chamar essa var.
+
+uma função anônima geralmente aparece como uma implementação de interface ou classe interna anônima.
+
+É usada quando você precisa passar uma implementação rápida sem criar uma classe separada.
+FUNÇÃO LAMBDA MINIMIZA O CÓDIGO-> São uma forma mais curta de escrever funções anônimas, especialmente para interfaces funcionais (interfaces com apenas um método abstrato).
+list.sort((p1,p2)-> p1.getname().toUpperCase().compareTo(p2.getname().toUpperCase();
+errow function
+
+Paradigmas de programação
+Paradigma funcional baseado no fromalismo matemático Cálculo Lambda, escrevendo por meio de expressões = programação funcional transparência referencial(função só depende dos seus valores de entrada e não de acesso a valores externos), Objetos imutáveis(programa mais simples e menos matutenção, Tipagem dinâmica / inferência de tipos, função de primeira ordem(podem ser passadods como parametros e retorna funções)
+
+Programação imperativa(antiga) não tem essas qualidades ou é fraco
+
+
+
+O :: é chamado de operador de referência a método (method reference).
+Ele aponta para um método existente sem precisar chamá-lo diretamente.
+Funciona como uma função lambda, mas de forma ainda mais curta e legível.
+
+ Exemplos
+Lambda:
+List<String> nomes = List.of("Ana", "João", "Maria");
+nomes.forEach(nome -> System.out.println(nome));
+
+Method Reference:
+nomes.forEach(System.out::println);
+
+
+Interface funcional -> único método abstrato e suas implementações serão com lambda
+Existem interfaces funcionais prontas:
+
+Predicate é uma interface genérica parametizada com um obj T
+com um método TESTE boleano
+
+classe Product com atribute nome e preco
+Main com uma Lista e lista.add(new Product(nome,preço))
+classe ProductPredicate implements Predicate<Product>
+add método obrigatório
+    public boolean test(Product p)
+    rertunr p.getPreco()>=100.0;
+
+Main chama lista.removeIf(new ProductPredicate)  chama a interface funcional
+for(Product p : list) sout(p)             imprime a lista nova na tela
+
+
+Também pode fazer de outros jeitos como
+Declarndo unma função lambda, assim vc pode pegar valores do usuario de var
+
+Main
+Predicate<Product> pred = p-> p.getPreco() .= 100,0
+lista.removeIf(pred)
+
+Ou fazer declração inline
+double mim = 100.0;
+
+
+lista.removeIf(p -> p.getPreco() >= min)
+
+Consumer = interface funcional  parametrizada no tipo T e tem um método void q exeuta uma ação e não retorna nada
+
+percorrer coleção e executar Consumer = forEach nem PriceUpdate() forEach(System.out::println) isso percorre a lista atualizada com a ação
+
+Porém dá pra fazer inline
+double factor = 1.1;
+ list.forEach(p-> p.setPriec(p.getPrice() * factor));
+ forEach(System.out::println)
+
+Function interface que recebe T e retorna R usando map funciona a partir de uma Stream , map que é uma função que aplica uma função  todos elementos de uma stream que é um fluxo de dados
+CONVERSÕES
+ LIST para stream .stream
+ Stream para lIst .collect(Collectors.toList())
+
+ Criar classe que implements interface Function<Product, String>     pq ele tem um valor de entrada e um de saída
+ faz o método obrigatório
+
+ In line
+ List<String> names = list.stream().map(p-> p.getName().toUpperCase()).collect(Collectors.toList())
+ vc precisa criar uma nova lista do tipo que você quer de saída, segundo parâmetro da interface
+ para imprimir
+ names.forEach(System.out::println)
+
+
+Criando funções que recebem funções como parâmetros
+ em ClassService passa como parâmetro um Predicate<Product> criterio
+ faz seu predcado genérico
+ e na main faz a chamada com o método da classe Service
+
+ STREAM seqûencia de elementos q vem de uma fonte de dados como coleção,array,função de iteração
+ solução para processar sequencias de forma declarativa, paraletizada,sob demanda, acesso sequencial com single use
+ Pipline operações streams retornam novas stream, cadeia
+
+
+ exercício resolvido stream e de fixação -> fazer e rever (saber arq)
+
+
+
+
