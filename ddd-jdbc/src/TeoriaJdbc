@@ -1,0 +1,31 @@
+JDBC-> ACESSO A BANCO DE DADOS
+
+Java Database Connectivity Api padrão do Java para acessar dados.
+
+ Java Aplication
+ DRIVER JDBC
+ converte para banco de dado específico
+ Banco sql converte para sua linguagem
+
+ Algebra Relacional e SQL
+ Restrição,
+  WHERE é o que faz a condição
+ projeção,
+ você quer uma tabela com alguns campos
+
+ produto cartesiano é SELECT * FROM TABELA1,TABELA2 que é o resultado do cruzamento das duas tabelas
+
+ Uma junção serve para combinar dados de duas ou mais tabelas usando uma condição de relacionamento (normalmente baseado em chaves primárias e estrangeiras).
+ INNER JOIN ->Retorna somente os registros que têm correspondência em ambas as tabelas.
+ junção é uma produto cartesiano com restrição de pk com fk
+ SELECT * FROM TABELA1,TABELA2 WHERE TABELA1.TABELA2_ID = TABELA2.ID
+ SELECT * FROM TABELA1 INNER JOIN TABELA2 tab ON TABELA1.TABELA2_ID = tab.ID
+ LEFT JOIN (ou LEFT OUTER JOIN) ->Retorna todos os registros da tabela da esquerda, e os correspondentes da tabela da direita.
+ Se não houver correspondência, os campos da direita aparecem como NULL.
+ RIGHT JOIN (ou RIGHT OUTER JOIN)
+ Retorna todos os registros da tabela da direita, e os correspondentes da esquerda.
+ Similar ao LEFT JOIN, mas invertido.
+ FULL JOIN (ou FULL OUTER JOIN)
+ CROSS JOIN
+ Retorna o produto cartesiano das tabelas: cada registro da tabela A combinado com todos da tabela B.
+ Retorna todos os registros das duas tabelas, preenchendo NULL onde não houver correspondência.
